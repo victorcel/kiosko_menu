@@ -89,7 +89,7 @@ class PaypalController extends Controller
         foreach ($cart as $product) {
             $this->saveOrderItem($product, $order->id);
             $profile = CapabilityProfile::load("SP2000");
-            $connector = new WindowsPrintConnector("TG2480H");//TG2480-H "smb://guest:123456@".\Request::ip()."/tg2480-h"
+            $connector = new WindowsPrintConnector("smb://guest:123456@".\Request::ip()."/tg2480-h");//TG2480H "smb://guest:123456@".\Request::ip()."/tg2480-h"
             $printer = new Printer($connector);
             $now = new \DateTime();
             //dd($product->price);
